@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel Sustainability Timeline</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/intel-logo.png" />
+  <meta name="theme-color" content="#0071c5" />
+  <meta name="description" content="Interactive timeline of Intel milestones with responsive design, hover effects, and scroll snap." />
 </head>
 <body>
   <!-- HERO -->
@@ -16,37 +19,35 @@
 
   <!-- TIMELINE -->
   <section class="timeline">
-
-    <div class="card">
+    <div class="card" tabindex="0" role="button" aria-expanded="false">
       <h2>1968</h2>
-      <img src="img/1968.png" alt="Intel Founded" />
+      <img src="img/1968.png" alt="Intel founded in 1968" loading="lazy" />
       <p>Intel founded, beginning its innovation journey.</p>
     </div>
 
-    <div class="card">
+    <div class="card" tabindex="0" role="button" aria-expanded="false">
       <h2>1971</h2>
-      <img src="img/1971.png" alt="First Microprocessor" />
+      <img src="img/1971.png" alt="First microprocessor (1971)" loading="lazy" />
       <p>The first microprocessor, paving the way for modern computing.</p>
     </div>
 
-    <div class="card">
+    <div class="card" tabindex="0" role="button" aria-expanded="false">
       <h2>1978</h2>
-      <img src="img/1978.png" alt="8086 Processor" />
+      <img src="img/1978.png" alt="Intel 8086 processor (1978)" loading="lazy" />
       <p>Launch of the 8086 processor, a milestone in performance.</p>
     </div>
 
-    <div class="card">
+    <div class="card" tabindex="0" role="button" aria-expanded="false">
       <h2>1985</h2>
-      <img src="img/1985.png" alt="Intel 386 Processor" />
+      <img src="img/1985.png" alt="Intel 386 processor (1985)" loading="lazy" />
       <p>Intel introduces the 386 processor with 32-bit architecture.</p>
     </div>
 
-    <div class="card">
+    <div class="card" tabindex="0" role="button" aria-expanded="false">
       <h2>2025</h2>
-      <img src="img/2025.png" alt="Sustainability Goals" />
+      <img src="img/2025.png" alt="Intel sustainability goals (2025)" loading="lazy" />
       <p>Commitment to 100% renewable energy and zero waste.</p>
     </div>
-
   </section>
 
   <!-- FOOTER -->
@@ -59,7 +60,10 @@
     const cards = document.querySelectorAll('.card');
 
     // First card open on load
-    if (cards[0]) cards[0].classList.add('expanded');
+    if (cards[0]) {
+      cards[0].classList.add('expanded');
+      cards[0].setAttribute('aria-expanded', 'true');
+    }
 
     const expandOnScroll = () => {
       let closestCard = null;
@@ -75,20 +79,33 @@
       });
 
       if (closestCard) {
-        cards.forEach(c => c.classList.remove('expanded'));
+        cards.forEach(c => {
+          c.classList.remove('expanded');
+          c.setAttribute('aria-expanded', 'false');
+        });
         closestCard.classList.add('expanded');
+        closestCard.setAttribute('aria-expanded', 'true');
       }
     };
 
-    // Manual open (click or hover)
+    // Manual open (click, hover, or keyboard)
     cards.forEach(card => {
-      card.addEventListener('click', () => {
-        cards.forEach(c => c.classList.remove('expanded'));
+      const activate = () => {
+        cards.forEach(c => {
+          c.classList.remove('expanded');
+          c.setAttribute('aria-expanded', 'false');
+        });
         card.classList.add('expanded');
-      });
-      card.addEventListener('mouseenter', () => {
-        cards.forEach(c => c.classList.remove('expanded'));
-        card.classList.add('expanded');
+        card.setAttribute('aria-expanded', 'true');
+      };
+
+      card.addEventListener('click', activate);
+      card.addEventListener('mouseenter', activate);
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
       });
     });
 
