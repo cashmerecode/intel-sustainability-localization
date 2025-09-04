@@ -17,6 +17,18 @@ body{
   overflow-x:hidden;
 }
 
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #eee;
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg,#0071c5,#00bcd4) 1;
+  box-shadow: inset 0 0 12px rgba(0,188,212,0.4);
+}
+
 /* Hero */
 .hero{
   background: linear-gradient(135deg, var(--intel-blue) 0%, var(--intel-teal) 100%);
