@@ -317,7 +317,7 @@ footer a:focus-visible {
 
 .accordion-item {
   background: var(--panel);
-  border: 3px solid rgba(0, 188, 212, 0.35);
+  border: 2px solid rgba(0, 188, 212, 0.35);
   border-radius: 14px;
   overflow: hidden;
 }
