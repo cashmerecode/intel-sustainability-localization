@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,112 +7,86 @@
   <title>Intel Sustainability Timeline</title>
   <link rel="icon" href="img/intel-logo.png" />
   <meta name="theme-color" content="#0071c5" />
-  <meta name="description" content="Interactive timeline of Intel milestones with responsive design, hover effects, scroll snap, and localization features." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Intel milestones timeline with localization, accessibility, and a responsive Bootstrap section." />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hero -->
   <header class="hero">
     <img src="img/intel-logo.png" alt="Intel Logo" class="logo" />
     <h1>Sustainability Through the Ages</h1>
     <p>Intel’s journey toward a more sustainable future.</p>
   </header>
 
-  <!-- Timeline -->
-  <section class="timeline" aria-labelledby="milestones-heading">
-    <h2 id="milestones-heading" class="visually-hidden">Intel Milestones</h2>
-
+  <section class="timeline">
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h3>1968</h3>
+      <h2>1968</h2>
       <img src="img/1968.png" alt="Intel founded in 1968" loading="lazy" />
       <p>Intel founded, beginning its innovation journey.</p>
     </div>
-
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h3>1971</h3>
+      <h2>1971</h2>
       <img src="img/1971.png" alt="First microprocessor (1971)" loading="lazy" />
       <p>The first microprocessor, paving the way for modern computing.</p>
     </div>
-
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h3>1978</h3>
+      <h2>1978</h2>
       <img src="img/1978.png" alt="Intel 8086 processor (1978)" loading="lazy" />
       <p>Launch of the 8086 processor, a milestone in performance.</p>
     </div>
-
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h3>1985</h3>
+      <h2>1985</h2>
       <img src="img/1985.png" alt="Intel 386 processor (1985)" loading="lazy" />
       <p>Intel introduces the 386 processor with 32-bit architecture.</p>
     </div>
-
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h3>2025</h3>
+      <h2>2025</h2>
       <img src="img/2025.png" alt="Intel sustainability goals (2025)" loading="lazy" />
       <p>Commitment to 100% renewable energy and zero waste.</p>
     </div>
   </section>
 
-  <!-- Three-Column Section -->
-  <section class="section" aria-labelledby="intel-3col-heading">
+  <section class="section" aria-labelledby="focus-areas">
     <div class="container">
-      <h2 id="intel-3col-heading" class="section-title">Global Sustainability Focus Areas</h2>
-
+      <h2 id="focus-areas" class="section-title">Global Sustainability Focus Areas</h2>
       <div class="row g-4">
         <div class="col-12 col-md-4">
           <article class="section-card h-100">
             <div class="d-flex align-items-start gap-3 mb-3">
-              <svg width="32" height="32" aria-hidden="true" viewBox="0 0 16 16">
-                <path d="M8 0a5 5 0 0 0-5 5c0 3.25 5 11 5 11s5-7.75 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
-              </svg>
+              <svg width="32" height="32" aria-hidden="true" viewBox="0 0 16 16"><path d="M8 0a5 5 0 0 0-5 5c0 3.25 5 11 5 11s5-7.75 5-11A5 5 0 0 0 8 0zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
               <h3 class="h5 m-0">Efficient Facilities</h3>
             </div>
             <p>Reducing energy and water usage across global sites through design, metering, and innovation.</p>
-            <a class="btn btn-primary w-100" href="#learn-facilities">
-              Learn more <span class="visually-hidden">about efficient facilities</span>
-            </a>
+            <a class="btn btn-primary w-100" href="#learn-facilities">Learn more<span class="visually-hidden"> about efficient facilities</span></a>
           </article>
         </div>
-
         <div class="col-12 col-md-4">
           <article class="section-card h-100">
             <div class="d-flex align-items-start gap-3 mb-3">
-              <svg width="32" height="32" aria-hidden="true" viewBox="0 0 16 16">
-                <path d="M0 1h16v2H0V1zm2 4h12v2H2V5zm-2 4h16v2H0V9zm2 4h12v2H2v-2z"/>
-              </svg>
+              <svg width="32" height="32" aria-hidden="true" viewBox="0 0 16 16"><path d="M0 1h16v2H0V1zm2 4h12v2H2V5zm-2 4h16v2H0V9zm2 4h12v2H2v-2z"/></svg>
               <h3 class="h5 m-0">Responsible Supply Chain</h3>
             </div>
             <p>Partnering with suppliers to uphold labor, safety, and environmental standards.</p>
-            <a class="btn btn-primary w-100" href="#learn-supply">
-              Learn more <span class="visually-hidden">about responsible supply chain</span>
-            </a>
+            <a class="btn btn-primary w-100" href="#learn-supply">Learn more<span class="visually-hidden"> about responsible supply chain</span></a>
           </article>
         </div>
-
         <div class="col-12 col-md-4">
           <article class="section-card h-100">
             <div class="d-flex align-items-start gap-3 mb-3">
-              <svg width="32" height="32" aria-hidden="true" viewBox="0 0 16 16">
-                <path d="M8 1l2.39 4.84L16 6.18l-4 3.9.94 5.49L8 13.77 3.06 15.57 4 10.08 0 6.18l5.61-.34L8 1z"/>
-              </svg>
+              <svg width="32" height="32" aria-hidden="true" viewBox="0 0 16 16"><path d="M8 1l2.39 4.84L16 6.18l-4 3.9.94 5.49L8 13.77 3.06 15.57 4 10.08 0 6.18l5.61-.34L8 1z"/></svg>
               <h3 class="h5 m-0">Products for Impact</h3>
             </div>
             <p>Tech that helps customers lower costs and carbon, from efficient data centers to AI-optimized workloads.</p>
-            <a class="btn btn-primary w-100" href="#learn-products">
-              Learn more <span class="visually-hidden">about products for impact</span>
-            </a>
+            <a class="btn btn-primary w-100" href="#learn-products">Learn more<span class="visually-hidden"> about products for impact</span></a>
           </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Subscription Form -->
-  <section class="section" aria-labelledby="intel-subscribe-heading">
+  <section class="section" aria-labelledby="subscribe">
     <div class="container">
-      <h2 id="intel-subscribe-heading" class="section-title">Subscribe to Intel Sustainability Updates</h2>
-
+      <h2 id="subscribe" class="section-title">Subscribe to Intel Sustainability Updates</h2>
       <form class="form-wrap" method="post" action="#" novalidate>
         <div class="mb-3">
           <label for="sub-email" class="form-label">Email address</label>
@@ -119,23 +94,17 @@
           <div id="sub-help" class="form-text">We’ll send occasional updates. Unsubscribe anytime.</div>
           <div id="sub-error" class="invalid-feedback">Please enter a valid email address.</div>
         </div>
-
         <div class="mb-3 form-check">
           <input class="form-check-input" type="checkbox" id="sub-consent" required>
           <label class="form-check-label" for="sub-consent">I agree to receive emails per the Privacy Notice.</label>
           <div class="invalid-feedback">Please agree before subscribing.</div>
         </div>
-
         <button type="submit" class="btn btn-success w-100">Subscribe</button>
-
-        <div class="alert alert-success mt-3 d-none" id="sub-success" role="status">
-          Thanks! Please check your inbox to confirm your subscription.
-        </div>
+        <div class="alert alert-success mt-3 d-none" id="sub-success" role="status">Thanks! Please check your inbox to confirm your subscription.</div>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; <span id="year"></span> Intel (student project). All rights reserved.</p>
     <nav aria-label="Footer">
@@ -145,54 +114,29 @@
     </nav>
   </footer>
 
-  <!-- Scripts -->
   <script>
     const cards = document.querySelectorAll('.card');
-    if (cards[0]) {
-      cards[0].classList.add('expanded');
-      cards[0].setAttribute('aria-expanded', 'true');
-    }
-
+    if (cards[0]) { cards[0].classList.add('expanded'); cards[0].setAttribute('aria-expanded', 'true'); }
     const expandOnScroll = () => {
-      let closestCard = null;
-      let closestDistance = Infinity;
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const distance = Math.abs(rect.top - window.innerHeight / 2);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestCard = card;
-        }
+      let closest = null, best = Infinity;
+      cards.forEach(c => {
+        const d = Math.abs(c.getBoundingClientRect().top - window.innerHeight / 2);
+        if (d < best) { best = d; closest = c; }
       });
-      if (closestCard) {
-        cards.forEach(c => {
-          c.classList.remove('expanded');
-          c.setAttribute('aria-expanded', 'false');
-        });
-        closestCard.classList.add('expanded');
-        closestCard.setAttribute('aria-expanded', 'true');
+      if (closest) {
+        cards.forEach(c => { c.classList.remove('expanded'); c.setAttribute('aria-expanded', 'false'); });
+        closest.classList.add('expanded'); closest.setAttribute('aria-expanded', 'true');
       }
     };
-
     cards.forEach(card => {
       const activate = () => {
-        cards.forEach(c => {
-          c.classList.remove('expanded');
-          c.setAttribute('aria-expanded', 'false');
-        });
-        card.classList.add('expanded');
-        card.setAttribute('aria-expanded', 'true');
+        cards.forEach(c => { c.classList.remove('expanded'); c.setAttribute('aria-expanded', 'false'); });
+        card.classList.add('expanded'); card.setAttribute('aria-expanded', 'true');
       };
       card.addEventListener('click', activate);
       card.addEventListener('mouseenter', activate);
-      card.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          activate();
-        }
-      });
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
     });
-
     window.addEventListener('scroll', expandOnScroll);
     window.addEventListener('load', expandOnScroll);
 
@@ -200,14 +144,8 @@
       const forms = document.querySelectorAll('form');
       forms.forEach(form => {
         form.addEventListener('submit', e => {
-          if (!form.checkValidity()) {
-            e.preventDefault();
-            e.stopPropagation();
-          } else {
-            e.preventDefault();
-            form.querySelector('#sub-success')?.classList.remove('d-none');
-            form.reset();
-          }
+          if (!form.checkValidity()) { e.preventDefault(); e.stopPropagation(); }
+          else { e.preventDefault(); form.querySelector('#sub-success')?.classList.remove('d-none'); form.reset(); }
           form.classList.add('was-validated');
         }, false);
       });
@@ -219,20 +157,13 @@
       document.documentElement.setAttribute('dir', RTL_LANGS.has(code) ? 'rtl' : 'ltr');
     }
     applyDirFromLang(document.documentElement.lang || 'en');
-    new MutationObserver(muts => {
-      for (const m of muts) {
-        if (m.type === 'attributes' && m.attributeName === 'lang') {
-          applyDirFromLang(document.documentElement.lang);
-          break;
-        }
-      }
-    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    new MutationObserver(m => { if (m[0]?.type === 'attributes') applyDirFromLang(document.documentElement.lang); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
     setInterval(() => {
       const detected = document.documentElement.lang || document.body.getAttribute('lang');
       if (detected) applyDirFromLang(detected);
     }, 2000);
 
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
