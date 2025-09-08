@@ -107,6 +107,9 @@
           </div>
         </div>
       </div>
+      <div class="text-center mt-4">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#intelModal">Open Overview</button>
+      </div>
     </div>
   </section>
 
@@ -141,15 +144,23 @@
   </footer>
 
   <div class="modal fade" id="intelModal" tabindex="-1" aria-labelledby="intelModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title h5 m-0" id="intelModalLabel">Latest Updates</h2>
+          <h2 class="modal-title h5 m-0" id="intelModalLabel">Localization Overview</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">RTL auto-detect, accessible form, FAQ accordion, and a responsive three-column section are live to support global audiences.</div>
+        <div class="modal-body">
+          <p class="mb-3">This page adds right-to-left support, a responsive three-column section, a subscription form, a consistent theme, and improved accessibility.</p>
+          <ul class="mb-0">
+            <li>Auto-detects language and switches layout direction.</li>
+            <li>Bootstrap grid for the three responsive feature cards.</li>
+            <li>Accessible form with validation feedback.</li>
+            <li>Single-color Intel-blue theme for visual consistency.</li>
+          </ul>
+        </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
