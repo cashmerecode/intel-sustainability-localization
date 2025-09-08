@@ -139,7 +139,9 @@
           <div class="invalid-feedback">Please agree before subscribing.</div>
         </div>
         <button type="submit" class="btn btn-success w-100">Subscribe</button>
-        <div class="alert alert-success mt-3 d-none" id="sub-success" role="status">Thanks! Please check your inbox to confirm your subscription.</div>
+        <div class="alert alert-success mt-3 d-none" id="sub-success" role="status">
+          Thanks! Please check your inbox to confirm your subscription.
+        </div>
       </form>
     </div>
   </section>
@@ -182,6 +184,7 @@
       cards[0].classList.add('expanded');
       cards[0].setAttribute('aria-expanded', 'true');
     }
+
     const expandOnScroll = () => {
       let closest = null;
       let best = Infinity;
@@ -201,6 +204,7 @@
         closest.setAttribute('aria-expanded', 'true');
       }
     };
+
     cards.forEach(card => {
       const activate = () => {
         cards.forEach(c => {
@@ -219,6 +223,7 @@
         }
       });
     });
+
     window.addEventListener('scroll', expandOnScroll);
     window.addEventListener('load', expandOnScroll);
 
