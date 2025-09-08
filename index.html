@@ -15,6 +15,9 @@
     <img src="img/intel-logo.png" alt="Intel Logo" class="logo" />
     <h1>Sustainability Through the Ages</h1>
     <p>Intel’s journey toward a more sustainable future.</p>
+    <div class="mt-3">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#intelModal">What’s New</button>
+    </div>
   </header>
 
   <section class="timeline">
@@ -83,6 +86,30 @@
     </div>
   </section>
 
+  <section class="section" aria-labelledby="faq">
+    <div class="container">
+      <h2 id="faq" class="section-title">Site FAQ</h2>
+      <div class="accordion" id="intelFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq1h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">How does RTL auto-detect work?</button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#intelFaq">
+            <div class="accordion-body">The script reads the page language and switches the document direction to RTL for languages like Arabic and Hebrew.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq2h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What changed for accessibility?</button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#intelFaq">
+            <div class="accordion-body">Higher contrast on dark panels, visible focus rings, labeled inputs with helper text, descriptive alt text, and keyboard-friendly timeline cards.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="subscribe">
     <div class="container">
       <h2 id="subscribe" class="section-title">Subscribe to Intel Sustainability Updates</h2>
@@ -112,6 +139,23 @@
       <a href="#contact">Contact</a>
     </nav>
   </footer>
+
+  <div class="modal fade" id="intelModal" tabindex="-1" aria-labelledby="intelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5 m-0" id="intelModalLabel">Latest Updates</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          RTL auto-detect, accessible form, and a responsive three-column section have been added to support global audiences.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     const cards = document.querySelectorAll('.card');
@@ -164,6 +208,19 @@
     }, 2000);
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        if (!sessionStorage.getItem('intelModalShown')) {
+          const modalEl = document.getElementById('intelModal');
+          if (modalEl) {
+            const m = new bootstrap.Modal(modalEl);
+            m.show();
+            sessionStorage.setItem('intelModalShown', '1');
+          }
+        }
+      } catch (_) {}
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
