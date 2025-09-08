@@ -19,38 +19,45 @@
   </header>
 
   <!-- Timeline -->
-  <section class="timeline">
+  <section class="timeline" aria-labelledby="milestones-heading">
+    <h2 id="milestones-heading" class="visually-hidden">Intel Milestones</h2>
+
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h2>1968</h2>
+      <h3>1968</h3>
       <img src="img/1968.png" alt="Intel founded in 1968" loading="lazy" />
       <p>Intel founded, beginning its innovation journey.</p>
     </div>
+
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h2>1971</h2>
+      <h3>1971</h3>
       <img src="img/1971.png" alt="First microprocessor (1971)" loading="lazy" />
       <p>The first microprocessor, paving the way for modern computing.</p>
     </div>
+
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h2>1978</h2>
+      <h3>1978</h3>
       <img src="img/1978.png" alt="Intel 8086 processor (1978)" loading="lazy" />
       <p>Launch of the 8086 processor, a milestone in performance.</p>
     </div>
+
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h2>1985</h2>
+      <h3>1985</h3>
       <img src="img/1985.png" alt="Intel 386 processor (1985)" loading="lazy" />
       <p>Intel introduces the 386 processor with 32-bit architecture.</p>
     </div>
+
     <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <h2>2025</h2>
+      <h3>2025</h3>
       <img src="img/2025.png" alt="Intel sustainability goals (2025)" loading="lazy" />
       <p>Commitment to 100% renewable energy and zero waste.</p>
     </div>
   </section>
 
   <!-- Three-Column Section -->
-  <section class="py-5" aria-labelledby="intel-3col-heading">
+  <section class="section" aria-labelledby="intel-3col-heading">
     <div class="container">
-      <h2 id="intel-3col-heading" class="h3 mb-4 text-center">Global Sustainability Focus Areas</h2>
+      <h2 id="intel-3col-heading" class="section-title">Global Sustainability Focus Areas</h2>
+
       <div class="row g-4">
         <div class="col-12 col-md-4">
           <article class="section-card h-100">
@@ -66,6 +73,7 @@
             </a>
           </article>
         </div>
+
         <div class="col-12 col-md-4">
           <article class="section-card h-100">
             <div class="d-flex align-items-start gap-3 mb-3">
@@ -80,6 +88,7 @@
             </a>
           </article>
         </div>
+
         <div class="col-12 col-md-4">
           <article class="section-card h-100">
             <div class="d-flex align-items-start gap-3 mb-3">
@@ -99,22 +108,26 @@
   </section>
 
   <!-- Subscription Form -->
-  <section class="py-5" aria-labelledby="intel-subscribe-heading">
+  <section class="section" aria-labelledby="intel-subscribe-heading">
     <div class="container">
-      <h2 id="intel-subscribe-heading" class="h3 mb-3 text-center">Subscribe to Intel Sustainability Updates</h2>
-      <form class="maxw-560" method="post" action="#" novalidate>
+      <h2 id="intel-subscribe-heading" class="section-title">Subscribe to Intel Sustainability Updates</h2>
+
+      <form class="form-wrap" method="post" action="#" novalidate>
         <div class="mb-3">
           <label for="sub-email" class="form-label">Email address</label>
           <input id="sub-email" name="email" type="email" class="form-control" placeholder="you@example.com" required aria-describedby="sub-help sub-error">
           <div id="sub-help" class="form-text">We’ll send occasional updates. Unsubscribe anytime.</div>
           <div id="sub-error" class="invalid-feedback">Please enter a valid email address.</div>
         </div>
+
         <div class="mb-3 form-check">
           <input class="form-check-input" type="checkbox" id="sub-consent" required>
           <label class="form-check-label" for="sub-consent">I agree to receive emails per the Privacy Notice.</label>
           <div class="invalid-feedback">Please agree before subscribing.</div>
         </div>
+
         <button type="submit" class="btn btn-success w-100">Subscribe</button>
+
         <div class="alert alert-success mt-3 d-none" id="sub-success" role="status">
           Thanks! Please check your inbox to confirm your subscription.
         </div>
@@ -141,7 +154,8 @@
     }
 
     const expandOnScroll = () => {
-      let closestCard = null, closestDistance = Infinity;
+      let closestCard = null;
+      let closestDistance = Infinity;
       cards.forEach(card => {
         const rect = card.getBoundingClientRect();
         const distance = Math.abs(rect.top - window.innerHeight / 2);
@@ -218,6 +232,7 @@
       if (detected) applyDirFromLang(detected);
     }, 2000);
 
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
