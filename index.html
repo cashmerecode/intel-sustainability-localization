@@ -92,23 +92,33 @@
       <div class="accordion" id="intelFaq">
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq1h">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">How does RTL auto-detect work?</button>
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+              How does RTL auto-detect work?
+            </button>
           </h3>
           <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#intelFaq">
-            <div class="accordion-body">The script watches the document’s <code>lang</code> attribute and switches <code>dir</code> to RTL for languages like Arabic, Hebrew, or Farsi. Switch back to LTR for English and other LTR languages.</div>
+            <div class="accordion-body">
+              The script watches the document’s <code>lang</code> attribute and switches <code>dir</code> to RTL for languages like Arabic, Hebrew, or Farsi. Switch back to LTR for English and other LTR languages.
+            </div>
           </div>
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq2h">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What accessibility updates were added?</button>
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              What accessibility updates were added?
+            </button>
           </h3>
           <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#intelFaq">
-            <div class="accordion-body">Higher color contrast on dark panels, visible focus states, descriptive alt text, keyboard support for timeline cards, and an accessible subscription form with validation messaging.</div>
+            <div class="accordion-body">
+              Higher color contrast on dark panels, visible focus states, descriptive alt text, keyboard support for timeline cards, and an accessible subscription form with validation messaging.
+            </div>
           </div>
         </div>
       </div>
       <div class="text-center mt-4">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#intelModal">Open Overview</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#intelModal">
+          Open Overview
+        </button>
       </div>
     </div>
   </section>
@@ -119,12 +129,12 @@
       <form class="form-wrap" method="post" action="#" novalidate>
         <div class="mb-3">
           <label for="sub-email" class="form-label">Email address</label>
-          <input id="sub-email" name="email" type="email" class="form-control" placeholder="you@example.com" required aria-describedby="sub-help sub-error">
+          <input id="sub-email" name="email" type="email" class="form-control" placeholder="you@example.com" required aria-describedby="sub-help sub-error" />
           <div id="sub-help" class="form-text">We’ll send occasional updates. Unsubscribe anytime.</div>
           <div id="sub-error" class="invalid-feedback">Please enter a valid email address.</div>
         </div>
         <div class="mb-3 form-check">
-          <input class="form-check-input" type="checkbox" id="sub-consent" required>
+          <input class="form-check-input" type="checkbox" id="sub-consent" required />
           <label class="form-check-label" for="sub-consent">I agree to receive emails per the Privacy Notice.</label>
           <div class="invalid-feedback">Please agree before subscribing.</div>
         </div>
@@ -168,26 +178,46 @@
 
   <script>
     const cards = document.querySelectorAll('.card');
-    if (cards[0]) { cards[0].classList.add('expanded'); cards[0].setAttribute('aria-expanded', 'true'); }
+    if (cards[0]) {
+      cards[0].classList.add('expanded');
+      cards[0].setAttribute('aria-expanded', 'true');
+    }
     const expandOnScroll = () => {
-      let closest = null, best = Infinity;
+      let closest = null;
+      let best = Infinity;
       cards.forEach(c => {
         const d = Math.abs(c.getBoundingClientRect().top - window.innerHeight / 2);
-        if (d < best) { best = d; closest = c; }
+        if (d < best) {
+          best = d;
+          closest = c;
+        }
       });
       if (closest) {
-        cards.forEach(c => { c.classList.remove('expanded'); c.setAttribute('aria-expanded', 'false'); });
-        closest.classList.add('expanded'); closest.setAttribute('aria-expanded', 'true');
+        cards.forEach(c => {
+          c.classList.remove('expanded');
+          c.setAttribute('aria-expanded', 'false');
+        });
+        closest.classList.add('expanded');
+        closest.setAttribute('aria-expanded', 'true');
       }
     };
     cards.forEach(card => {
       const activate = () => {
-        cards.forEach(c => { c.classList.remove('expanded'); c.setAttribute('aria-expanded', 'false'); });
-        card.classList.add('expanded'); card.setAttribute('aria-expanded', 'true');
+        cards.forEach(c => {
+          c.classList.remove('expanded');
+          c.setAttribute('aria-expanded', 'false');
+        });
+        card.classList.add('expanded');
+        card.setAttribute('aria-expanded', 'true');
       };
       card.addEventListener('click', activate);
       card.addEventListener('mouseenter', activate);
-      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+      });
     });
     window.addEventListener('scroll', expandOnScroll);
     window.addEventListener('load', expandOnScroll);
@@ -196,8 +226,14 @@
       const forms = document.querySelectorAll('form');
       forms.forEach(form => {
         form.addEventListener('submit', e => {
-          if (!form.checkValidity()) { e.preventDefault(); e.stopPropagation(); }
-          else { e.preventDefault(); form.querySelector('#sub-success')?.classList.remove('d-none'); form.reset(); }
+          if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+          } else {
+            e.preventDefault();
+            form.querySelector('#sub-success')?.classList.remove('d-none');
+            form.reset();
+          }
           form.classList.add('was-validated');
         }, false);
       });
@@ -209,11 +245,16 @@
       document.documentElement.setAttribute('dir', RTL_LANGS.has(code) ? 'rtl' : 'ltr');
     }
     applyDirFromLang(document.documentElement.lang || 'en');
-    new MutationObserver(m => { if (m[0]?.type === 'attributes') applyDirFromLang(document.documentElement.lang); })
-      .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    new MutationObserver(m => {
+      if (m[0]?.type === 'attributes') {
+        applyDirFromLang(document.documentElement.lang);
+      }
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
     setInterval(() => {
       const detected = document.documentElement.lang || document.body.getAttribute('lang');
-      if (detected) applyDirFromLang(detected);
+      if (detected) {
+        applyDirFromLang(detected);
+      }
     }, 2000);
 
     document.getElementById('year').textContent = new Date().getFullYear();
