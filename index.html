@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Intel Sustainability Timeline</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/intel-logo.png" />
   <meta name="theme-color" content="#0071c5" />
   <meta name="description" content="Interactive timeline of Intel milestones with responsive design, hover effects, and scroll snap." />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
 </head>
 <body>
-  <!-- HERO -->
   <header class="hero">
     <img src="img/intel-logo.png" alt="Intel Logo" class="logo" />
     <h1>Sustainability Through the Ages</h1>
     <p>Intel’s journey toward a more sustainable future.</p>
   </header>
-
-  <!-- TIMELINE -->
   <section class="timeline">
     <div class="card" tabindex="0" role="button" aria-expanded="false">
       <h2>1968</h2>
@@ -50,16 +53,102 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Intel Sustainability Timeline Project</p>
+  <section class="py-5 bg-light" aria-labelledby="intel-3col-heading">
+    <div class="container">
+      <h2 id="intel-3col-heading" class="h3 mb-4 text-center">Global Sustainability Focus Areas</h2>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <article class="h-100 p-4 border rounded-3 bg-white shadow-sm">
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <svg class="flex-shrink-0" width="32" height="32" aria-hidden="true" viewBox="0 0 16 16">
+                <path d="M8 0a5 5 0 0 0-5 5c0 3.25 5 11 5 11s5-7.75 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+              </svg>
+              <h3 class="h5 m-0">Efficient Facilities</h3>
+            </div>
+            <p class="mb-3">Reducing energy and water usage across global sites through design, metering, and innovation.</p>
+            <a class="btn btn-primary w-100" href="#learn-facilities">
+              Learn more <span class="visually-hidden">about efficient facilities</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="h-100 p-4 border rounded-3 bg-white shadow-sm">
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <svg class="flex-shrink-0" width="32" height="32" aria-hidden="true" viewBox="0 0 16 16">
+                <path d="M0 1h16v2H0V1zm2 4h12v2H2V5zm-2 4h16v2H0V9zm2 4h12v2H2v-2z"/>
+              </svg>
+              <h3 class="h5 m-0">Responsible Supply Chain</h3>
+            </div>
+            <p class="mb-3">Partnering with suppliers to uphold labor, safety, and environmental standards.</p>
+            <a class="btn btn-primary w-100" href="#learn-supply">
+              Learn more <span class="visually-hidden">about responsible supply chain</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="h-100 p-4 border rounded-3 bg-white shadow-sm">
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <!-- star icon -->
+              <svg class="flex-shrink-0" width="32" height="32" aria-hidden="true" viewBox="0 0 16 16">
+                <path d="M8 1l2.39 4.84L16 6.18l-4 3.9.94 5.49L8 13.77 3.06 15.57 4 10.08 0 6.18l5.61-.34L8 1z"/>
+              </svg>
+              <h3 class="h5 m-0">Products for Impact</h3>
+            </div>
+            <p class="mb-3">Tech that helps customers lower costs and carbon, from efficient data centers to AI-optimized workloads.</p>
+            <a class="btn btn-primary w-100" href="#learn-products">
+              Learn more <span class="visually-hidden">about products for impact</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" aria-labelledby="intel-subscribe-heading">
+    <div class="container">
+      <h2 id="intel-subscribe-heading" class="h3 mb-3 text-center">Subscribe to Intel Sustainability Updates</h2>
+
+      <form class="mx-auto" style="max-width:560px" method="post" action="#" novalidate>
+        <div class="mb-3">
+          <label for="sub-email" class="form-label">Email address</label>
+          <input id="sub-email" name="email" type="email" class="form-control" inputmode="email"
+                 autocomplete="email" placeholder="you@example.com" required
+                 aria-describedby="sub-help sub-error">
+          <div id="sub-help" class="form-text">We’ll send occasional updates. Unsubscribe anytime.</div>
+          <div id="sub-error" class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+
+        <div class="mb-3 form-check">
+          <input class="form-check-input" type="checkbox" value="yes" id="sub-consent" required>
+          <label class="form-check-label" for="sub-consent">I agree to receive emails per the Privacy Notice.</label>
+          <div class="invalid-feedback">Please agree before subscribing.</div>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Subscribe</button>
+
+        <div class="alert alert-success mt-3 d-none" role="status" id="sub-success">
+          Thanks! Please check your inbox to confirm your subscription.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="mt-auto py-4 bg-dark text-light">
+    <div class="container d-flex flex-column flex-md-row align-items-center gap-3">
+      <p class="m-0 small">&copy; <span id="year"></span> Intel (student project). All rights reserved.</p>
+      <nav class="ms-md-auto" aria-label="Footer">
+        <a class="link-light me-3" href="#privacy">Privacy</a>
+        <a class="link-light me-3" href="#terms">Terms</a>
+        <a class="link-light" href="#contact">Contact</a>
+      </nav>
+    </div>
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     const cards = document.querySelectorAll('.card');
-
-    // First card open on load
     if (cards[0]) {
       cards[0].classList.add('expanded');
       cards[0].setAttribute('aria-expanded', 'true');
@@ -88,7 +177,6 @@
       }
     };
 
-    // Manual open (click, hover, or keyboard)
     cards.forEach(card => {
       const activate = () => {
         cards.forEach(c => {
@@ -111,6 +199,52 @@
 
     window.addEventListener('scroll', expandOnScroll);
     window.addEventListener('load', expandOnScroll);
+
+    (function () {
+      'use strict';
+      const forms = document.querySelectorAll('form');
+      forms.forEach(form => {
+        form.addEventListener('submit', e => {
+          if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+          } else {
+            // demo success
+            e.preventDefault();
+            form.querySelector('#sub-success')?.classList.remove('d-none');
+            form.reset();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+    
+    const RTL_LANGS = new Set(['ar','he','fa','ur','ps','ku','sd','ug','dv','yi']);
+    function applyDirFromLang(lang) {
+      const code = (lang || '').split('-')[0].toLowerCase();
+      document.documentElement.setAttribute('dir', RTL_LANGS.has(code) ? 'rtl' : 'ltr');
+    }
+    applyDirFromLang(document.documentElement.lang || 'en');
+    new MutationObserver(muts => {
+      for (const m of muts) {
+        if (m.type === 'attributes' && m.attributeName === 'lang') {
+          applyDirFromLang(document.documentElement.lang);
+          break;
+        }
+      }
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    setInterval(() => {
+      const detected = document.documentElement.lang || document.body.getAttribute('lang');
+      if (detected) applyDirFromLang(detected);
+    }, 2000);
   </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
