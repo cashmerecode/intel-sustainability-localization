@@ -124,8 +124,7 @@ a:hover {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0, 188, 212, 0.45),
-              0 0 40px rgba(0, 113, 197, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 188, 212, 0.45), 0 0 40px rgba(0, 113, 197, 0.4);
 }
 
 .card h2 {
@@ -294,11 +293,51 @@ footer a:focus-visible {
   text-decoration: underline;
 }
 
+.accordion {
+  --bs-accordion-color: var(--text);
+  --bs-accordion-bg: var(--panel);
+  --bs-accordion-border-color: rgba(255, 255, 255, 0.25);
+  --bs-accordion-btn-bg: var(--panel);
+  --bs-accordion-btn-color: var(--text);
+  --bs-accordion-active-bg: #13253a;
+  --bs-accordion-active-color: var(--text);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.25);
+}
+
+.accordion-button {
+  font-weight: 600;
+}
+
+.accordion-button::after {
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+.accordion-body {
+  color: var(--muted);
+}
+
+.modal-content {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+}
+
+.modal-header {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.modal-footer {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-close {
+  filter: invert(1);
+  opacity: 0.8;
+}
+
 @media (min-width: 1024px) {
-  .timeline {
-    flex-direction: row;
-    overflow-x: auto;
-  }
   .card {
     min-width: 320px;
     max-width: 400px;
