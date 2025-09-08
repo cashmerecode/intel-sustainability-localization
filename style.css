@@ -329,8 +329,11 @@ footer a:focus-visible {
 .accordion-button {
   background: var(--panel);
   color: var(--text);
+  font-weight: 600;
+  padding: 1rem 1.25rem;
   box-shadow: none;
   border: none;
+  border-radius: 12px;
 }
 
 .accordion-button:focus {
@@ -340,8 +343,8 @@ footer a:focus-visible {
 }
 
 .accordion-button:not(.collapsed) {
-  background: var(--panel);
-  color: var(--text);
+  background: var(--intel-blue);
+  color: #fff;
 }
 
 .accordion-button::after {
@@ -350,8 +353,9 @@ footer a:focus-visible {
 }
 
 .accordion-body {
-  background: var(--panel);
+  background: var(--ink-800);
   color: var(--muted);
+  padding: 1rem 1.25rem;
   border-top: 1px solid rgba(0, 188, 212, 0.2);
 }
 
